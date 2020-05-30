@@ -1,0 +1,12 @@
+.idea
+*.swp
+.DS_Store
+.vscode/
+/node_modules
+/plugins
+/platforms
+/opal.config.js
+/config.xml
+/google-services.json
+/GoogleService-Info.plist
+/www
