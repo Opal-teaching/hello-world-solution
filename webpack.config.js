@@ -3,7 +3,6 @@ const path = require('path');
 
 let entry = [
 	"./src/js/app.js",
-	"./src/js/app.controllers.js"
 ];
 
 module.exports = {
