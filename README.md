@@ -1,6 +1,6 @@
 # Hello World Assignment Solution
 
-Assignment repo: currently, [messaging-app](https://github.com/Opal-teaching/messaging-app) (to be moved).
+Assignment repo: [hello-world](https://github.com/Opal-teaching/hello-world).
 
 ## Running the Solution
 1. Clone this repository.
