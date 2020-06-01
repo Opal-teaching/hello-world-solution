@@ -1,5 +1,5 @@
 const CopyPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 let entry = [
@@ -55,7 +55,6 @@ module.exports = {
 				// Allows Onsen to compile with Webpack
 				test: /onsenui.js/,
 				loader: 'imports-loader?this=>window!exports-loader?window.Modernizr'
-
 			},
 			{
 				// Allows Onsen to compile with Webpack
@@ -74,4 +73,4 @@ module.exports = {
 			template: './src/index.html',
 		}),
 	]
-}
+};
