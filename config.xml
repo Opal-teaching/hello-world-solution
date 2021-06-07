@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<widget android-versionCode="1" ios-CFBundleVersion="1" id="com.hig.opalhelloworld" version="99.99.99"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:cdv="http://cordova.apache.org/ns/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Opal Hello World</name>
+    <description>
+        A Hello World application using the same technologies as the Opal app.
+    </description>
+    <author email="muhc.app.mobile@gmail.com" href="https://opalmedapps.com">
+        Opal Med Apps Inc.
+    </author>
+    <content src="index.html"/>
+    <access origin="*"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="opal:"/>
+    <preference name="AndroidPersistentFileLocation" value="Internal"/>
+    <preference name="Orientation" value="default"/>
+    <preference name="DisallowOverscroll" value="true"/>
+    <platform name="android">
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:debuggable="true"/>
+        </edit-config>
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application/activity">
+            <application android:allowBackup="false"/>
+        </edit-config>
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:usesCleartextTraffic="false"/>
+        </edit-config>
+        <!-- requestLegacyExternalStorage fixes file access issues in Android 10 / API Level 29. This parameter will be ignored by API Level 30+, when your app is running on Android 11 devices -->
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+            <application android:requestLegacyExternalStorage="true"/>
+        </edit-config>
+        <access origin="cdvfile://*"/>
+    </platform>
+    <platform name="ios">
+        <preference name="deployment-target" value="11.0"/>
+        <allow-intent href="itms:*"/>
+        <allow-intent href="itms-apps:*"/>
+    </platform>
+</widget>
