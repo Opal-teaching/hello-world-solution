@@ -5,6 +5,13 @@
 	<title>Opal Hello World</title>
 </head>
 <body ng-app="HelloWorld" ng-cloak>
-	<ons-navigator var="navi" page="./views/hello-world.html"></ons-navigator>
+	<div ng-controller="HelloWorldController as vm">
+		<div style="text-align: center">
+			<h1>{{vm.hello}}</h1>
+		</div>
+		<div style="text-align: center; color:seagreen" ng-click="vm.changeText()">
+			<h2>Click here</h2>
+		</div>
+	</div>
 </body>
 </html>
