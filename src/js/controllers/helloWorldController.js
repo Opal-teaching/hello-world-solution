@@ -10,6 +10,17 @@
 	/* @ngInject */
 	function HelloWorldController() { // Function representing this controller
 		const vm = this; // vm is the equivalent of $scope
-		vm.hello = "Hello World!"; // Declare a controller variable than can be used in its view
+		vm.textChoice = true;
+		vm.hello = setText(); // Declare a controller variable than can be used in its view
+		vm.changeText = changeText;
+
+		function changeText() {
+			vm.textChoice = !vm.textChoice;
+			vm.hello = setText();
+		}
+
+		function setText() {
+			return vm.textChoice ? "Hello World!" : "Nice to meet you!";
+		}
 	}
 })();
