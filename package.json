@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "prepare:app:staging": "cordova prepare",
-    "build:web:staging": "webpack --env.opal_environment=staging",
-    "build:app:staging:ios:package": "npm run prepare:app:staging && npm run build:web:staging && cordova build ios  --device --verbose",
-    "build:app:staging:android:package": "npm run prepare:app:staging && npm run build:web:staging && cordova build android --device --verbose",
+    "build:app:staging:ios:package": "npm run prepare:app:staging && cordova build ios  --device --verbose",
+    "build:app:staging:android:package": "npm run prepare:app:staging && cordova build android --device --verbose",
     "start": "webpack-dev-server --open --watch --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,9 +29,10 @@
   },
   "dependencies": {
     "angular": "^1.8.2",
+    "angularjs-onsenui": "^1.0.1",
     "cordova-android": "^9.1.0",
     "cordova-ios": "^6.2.0",
-    "onsenui": "2.0.0-beta.7"
+    "onsenui": "^2.11.2"
   },
   "cordova": {
     "platforms": [
