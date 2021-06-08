@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<ons-navigator swipeable var="myNavigator" page="page1.html"></ons-navigator>
+	<ons-navigator var="myNavigator" page="page1.html"></ons-navigator>
 
 	<ons-template id="page1.html">
 		<ons-page id="page1">
@@ -19,26 +19,7 @@
 
 			<p>This is the first page.</p>
 
-			<ons-button id="push-button" ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">Push page</ons-button>
-		</ons-page>
-	</ons-template>
-
-	<ons-template id="page2.html">
-		<ons-page id="page2" ng-controller="PageController">
-			<ons-toolbar>
-				<div class="left"><ons-back-button>Page 1</ons-back-button></div>
-				<div class="center"></div>
-			</ons-toolbar>
-
-			<p>This is the second page.</p>
-
-			<p>{{title}}</p>
-
-			<p style="text-align: center">
-				<ons-button ng-click="alert('Hello World!')">
-					Click me!
-				</ons-button>
-			</p>
+			<ons-button id="push-button" ng-click="myNavigator.pushPage('./second-page.html')">Push page</ons-button>
 		</ons-page>
 	</ons-template>
 
