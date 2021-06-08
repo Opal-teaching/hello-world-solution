@@ -51,16 +51,6 @@ module.exports = {
 					}
 				]
 			},
-			{
-				// Allows Onsen to compile with Webpack
-				test: /onsenui.js/,
-				loader: 'imports-loader?this=>window!exports-loader?window.Modernizr'
-			},
-			{
-				// Allows Onsen to compile with Webpack
-				test: /onsenui.js/,
-				loader: 'imports-loader?define=>false,module.exports=>false'
-			},
 		]
 	},
 	plugins: [

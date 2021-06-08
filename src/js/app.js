@@ -1,7 +1,8 @@
 import angular from "angular";
-import "onsenui/js/onsenui";
-import "onsenui/css/onsen-css-components-blue-basic-theme.css";
 import "onsenui/css/onsenui.css";
+import "onsenui/css/onsen-css-components.css";
 
-const app = angular
-    .module('HelloWorld', ['onsen']); // Defines the HelloWorld module and its dependencies
+window.ons = require('onsenui/js/onsenui');
+require('onsenui/js/angular-onsenui');
+
+angular.module('HelloWorld', ['onsen']); // Defines the HelloWorld module and its dependencies
