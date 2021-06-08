@@ -6,13 +6,12 @@
 	<link rel="stylesheet" href="./node_modules/onsenui/css/onsen-css-components.css"/>
 	<script src="./node_modules/angular/angular.js"></script>
 	<script src="./node_modules/onsenui/js/onsenui.js"></script>
-	<script src="./node_modules/angularjs-onsenui/dist/angularjs-onsenui.js"></script>
 </head>
 
 <body>
-	<ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+	<ons-navigator swipeable var="myNavigator" page="page1.html"></ons-navigator>
 
-	<template id="page1.html">
+	<ons-template id="page1.html">
 		<ons-page id="page1">
 			<ons-toolbar>
 				<div class="center">Page 1</div>
@@ -20,11 +19,11 @@
 
 			<p>This is the first page.</p>
 
-			<ons-button id="push-button">Push page</ons-button>
+			<ons-button id="push-button" ng-click="myNavigator.pushPage('page2.html', {data: {title: 'Page 2'}})">Push page</ons-button>
 		</ons-page>
-	</template>
+	</ons-template>
 
-	<template id="page2.html">
+	<ons-template id="page2.html">
 		<ons-page id="page2" ng-controller="PageController">
 			<ons-toolbar>
 				<div class="left"><ons-back-button>Page 1</ons-back-button></div>
@@ -41,25 +40,21 @@
 				</ons-button>
 			</p>
 		</ons-page>
-	</template>
+	</ons-template>
 
 	<script>
 		var module = angular.module('my-app', ['onsen']);
 		module.controller('PageController', function($scope) {
 			$scope.title = "Hello";
 			$scope.alert = function(message) {
-				ons.notification.alert(message);
+				ons.notification.alert({message: message});
 			};
 		});
 
 		document.addEventListener('init', function(event) {
 			var page = event.target;
 
-			if (page.id === 'page1') {
-				page.querySelector('#push-button').onclick = function() {
-					document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
-				};
-			} else if (page.id === 'page2') {
+			if (page.id === 'page2') {
 				page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
 			}
 		});
