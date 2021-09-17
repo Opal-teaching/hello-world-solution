@@ -1,3 +1,5 @@
+# *** MOVED TO GITLAB ***
+
 # Hello World Assignment Solution
 
 Assignment repo: [hello-world](https://github.com/Opal-teaching/hello-world).
